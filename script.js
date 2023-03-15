@@ -1,5 +1,6 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
+let btnDetalhesFilme = document.querySelector(".btnDetalhesFilme");
 
 btnBuscarFilme.onclick = () =>{
     if(inputBuscarFilme.value.length > 0){
@@ -35,7 +36,18 @@ let listarFilmes = async (filmes)=>{
     console.log(listaFilmes);
     if (filmes.length > 0){
         filmes.forEach(async(filme)=>{
+            console.log(filme);
             listaFilmes.appendChild(await filme. getCard());
+            filme.getBtnDetalhes().onclick=()=>{
+                detalhesFilme(filme.id);
+            }
         });
     }
+}
+let detalhesFilme = async (id)=>{
+    fetch("http://www.omdbapi.com/?apikey=6752ca2a&i="+id)
+    .then((resp)=>resp.json())
+    .then((resp)=>{
+
+    });
 }
