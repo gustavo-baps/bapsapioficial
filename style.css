@@ -16,11 +16,14 @@
     background-color: white;
     border: solid 2px black;
     z-index: 10;
-    position: absolute;
+    position: fixed;
     left: 300px;
-    top: 100px;
+    top: 50px;
     float: left;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
 }
-#mostrar-filme button{
+#mostrar-filme a{
     float: right;
+    margin: 5px;
 }
