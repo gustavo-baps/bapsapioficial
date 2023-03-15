@@ -9,3 +9,18 @@
     justify-content: start;
     padding: 2rem;
 }
+#mostrar-filme{
+    display: none;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: solid 2px black;
+    z-index: 10;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    float: left;
+}
+#mostrar-filme button{
+    float: right;
+}

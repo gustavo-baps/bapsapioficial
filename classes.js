@@ -25,7 +25,7 @@ class Filme{
         this.avaliacao=avaliacao;
         this.btnDetalhes=null;
     }
-    getCard = async () => {
+    getCard = () => {
         let card = document.createElement("div");
         card.setAttribute("class","card");
         let imgCartaz= document.createElement("img");

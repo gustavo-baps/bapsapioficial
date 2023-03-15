@@ -1,6 +1,7 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 let btnDetalhesFilme = document.querySelector(".btnDetalhesFilme");
+let mostrarFilme = document.getElementById('mostrar-filme');
 
 btnBuscarFilme.onclick = () =>{
     if(inputBuscarFilme.value.length > 0){
@@ -37,9 +38,10 @@ let listarFilmes = async (filmes)=>{
     if (filmes.length > 0){
         filmes.forEach(async(filme)=>{
             console.log(filme);
-            listaFilmes.appendChild(await filme. getCard());
+            listaFilmes.appendChild(filme. getCard());
             filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
+                mostrarFilme.style.display = "block";
             }
         });
     }
@@ -48,6 +50,10 @@ let detalhesFilme = async (id)=>{
     fetch("http://www.omdbapi.com/?apikey=6752ca2a&i="+id)
     .then((resp)=>resp.json())
     .then((resp)=>{
-
+        
     });
+}
+function fecharBotao(){
+    tela = document.getElementById('mostrar-filme');
+    mostrarFilme.style.display = "none";
 }
