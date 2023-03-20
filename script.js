@@ -41,7 +41,7 @@ let listarFilmes = async (filmes)=>{
             listaFilmes.appendChild(filme. getCard());
             filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
-    
+                mostrarFilme.style.display = "block";
             }
         });
     }
@@ -58,7 +58,7 @@ let detalhesFilme = async (id)=>{
             resp.Genre.split(","),
             resp.Runtime,
             resp.Poster,
-            resp.plot,
+            resp.Plot,
             resp.Director,
             resp.Actors.split(","),
             resp.Awards,
@@ -66,4 +66,8 @@ let detalhesFilme = async (id)=>{
         )
         console.log(filme);
     });
+}
+function fecharBotao(){
+    tela = document.getElementById('mostrar-filme');
+    mostrarFilme.style.display = "none";
 }

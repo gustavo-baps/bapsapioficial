@@ -9,4 +9,20 @@
     justify-content: start;
     padding: 2rem;
 }
-
+#mostrar-filme{
+    display: none;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    z-index: 10;
+    position: fixed;
+    left: 300px;
+    top: 50px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+}
+#mostrar-filme a{
+    float: right;
+    margin: 5px;
+}
