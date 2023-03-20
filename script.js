@@ -41,7 +41,7 @@ let listarFilmes = async (filmes)=>{
             listaFilmes.appendChild(filme. getCard());
             filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
-                mostrarFilme.style.display = "block";
+    
             }
         });
     }
@@ -50,10 +50,20 @@ let detalhesFilme = async (id)=>{
     fetch("http://www.omdbapi.com/?apikey=6752ca2a&i="+id)
     .then((resp)=>resp.json())
     .then((resp)=>{
-        
+        console.log(resp);
+        let filme = new Filme(
+            resp.imdbID,
+            resp.Title,
+            resp.Year,
+            resp.Genre.split(","),
+            resp.Runtime,
+            resp.Poster,
+            resp.plot,
+            resp.Director,
+            resp.Actors.split(","),
+            resp.Awards,
+            resp.imdbRating
+        )
+        console.log(filme);
     });
-}
-function fecharBotao(){
-    tela = document.getElementById('mostrar-filme');
-    mostrarFilme.style.display = "none";
 }
