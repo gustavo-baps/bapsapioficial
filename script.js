@@ -31,7 +31,6 @@ btnBuscarFilme.onclick = () =>{
         })
     }
     return false;
-    console.log(filme);
 }
 let detalhesFilme = async (id)=>{
     fetch("http://www.omdbapi.com/?apikey=6752ca2a&i="+id)
@@ -59,11 +58,11 @@ let listarFilmes = async (filmes)=>{
     console.log(listaFilmes);
     if (filmes.length > 0){
         filmes.forEach(async(filme)=>{
-            g.appendChild(await filme.getCard());
+            listaFilmes.appendChild(await filme.getCard());
             filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
                 mostrarFilme.style.display = "block";
-                document.getElementById('info').innerHTML = filme.sinopse;
+                document.getElementById('info').innerHTML = detalhesFilme.sinopse;
             }
         });
     }
