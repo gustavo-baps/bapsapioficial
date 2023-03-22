@@ -50,14 +50,11 @@ let detalhesFilme = async (id)=>{
             resp.imdbRating
         )
         document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
-        document.querySelector("#lista-filmes").style.display = "none";
         document.querySelector("#mostrar-filme").style.display = "flex";
     });
 }
 let listarFilmes = async (filmes)=>{
     let listaFilmes = await document.querySelector("#lista-filmes");
-    listaFilmes.style.display = "flex";
-    listaFilmes.innerHTML = "";
     document.querySelector("#mostrar-filme").innerhtml = "";
     document.querySelector("#mostrar-filme").style.display = "none";
     console.log(listaFilmes);

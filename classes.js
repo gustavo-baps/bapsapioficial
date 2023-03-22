@@ -81,20 +81,48 @@ class Filme{
         let img = document.createElement('img');
         img.setAttribute('class','img-fluid rounded-start');
         img.setAttribute('src',this.cartaz);
-        col.appendChild(img);
-        row.appendChild(col);
         let col2 = document.createElement('div');
         col2.setAttribute('class','col-md-8');
         let cardBody = document.createElement('div');
         cardBody.setAttribute('class', 'card-body');
-        let cardText = document.createElement('h5');
-        cardText.setAttribute('class', 'card-title');
+        let cardTitle = document.createElement('h5');
+        cardTitle.setAttribute('class', 'card-title');
+        cardTitle.appendChild(document.createTextNode(this.titulo));
+        let cardText = document.createElement('p');
+        cardText.setAttribute('class', 'card-text');
         let cardText2 = document.createElement('p');
         cardText2.setAttribute('class', 'card-text');
-        
+        let cardText3 = document.createElement('p');
+        cardText3.setAttribute('class', 'card-text');
+        cardText3.appendChild(document.createTextNode(this.avaliacao));
+        let cardText4 = document.createElement('p');
+        cardText4.setAttribute('class', 'card-text');
+        cardText4.appendChild(document.createTextNode(this.direcao));
+        let cardText5 = document.createElement('p');
+        cardText5.setAttribute('class', 'card-text');
+        cardText5.appendChild(document.createTextNode(this.duracao));
+        let small = document.createElement('small');
+        small.textContent = 'Last updated 3 mins ago';
+        cardText2.appendChild(small);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(cardText2);
+        cardBody.appendChild(cardText3);
+        cardBody.appendChild(cardText4);
+        cardBody.appendChild(cardText5);
+        col2.appendChild(row);
+        col.appendChild(img);
+        row.appendChild(col);
+        cardText.appendChild(document.createTextNode(this.sinopse));
+        cardDetalhes.appendChild(cardText);
+        cardDetalhes.appendChild(cardTitle);
+        cardDetalhes.appendChild(row);
+        cardDetalhes.appendChild(col);
+        cardDetalhes.appendChild(col2);
+        cardDetalhes.appendChild(cardBody);
+        cardDetalhes.appendChild(cardText2);
 
-
-
+        return cardDetalhes;
     }
 }
 
