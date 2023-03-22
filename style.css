@@ -11,13 +11,13 @@
 }
 #mostrar-filme{
     display: none;
-    width: 500px;
+    width: 350px;
     height: auto;
     background-color: white;
     z-index: 10;
     position: fixed;
     left: 300px;
-    top: 50px;
+    top: 10px;
     float: left;
     border-radius: 10px;
     box-shadow: 5px 5px 10px;
@@ -25,4 +25,7 @@
 #mostrar-filme a{
     float: right;
     margin: 5px;
+}
+.card{
+    border: none;
 }

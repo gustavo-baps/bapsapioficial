@@ -74,6 +74,7 @@ class Filme{
         let cardDetalhes = document.createElement('div');
         cardDetalhes.setAttribute('class', 'card mb-3');
         cardDetalhes.style.maxWidth = '540px';
+        cardDetalhes.style.margin = '10px'
         let row = document.createElement('div');
         row.setAttribute('class','row g-0');
         let col = document.createElement('div');
@@ -101,6 +102,15 @@ class Filme{
         let cardText5 = document.createElement('p');
         cardText5.setAttribute('class', 'card-text');
         cardText5.appendChild(document.createTextNode(this.duracao));
+        let cardText6 = document.createElement('p');
+        cardText6.setAttribute('class', 'card-text');
+        cardText6.appendChild(document.createTextNode(this.genero));
+        let cardText7 = document.createElement('p');
+        cardText7.setAttribute('class', 'card-text');
+        cardText7.appendChild(document.createTextNode(this.classificacao));
+        let cardText8 = document.createElement('p');
+        cardText8.setAttribute('class', 'card-text');
+        cardText8.appendChild(document.createTextNode(this.elenco));
         let small = document.createElement('small');
         small.textContent = 'Last updated 3 mins ago';
         cardText2.appendChild(small);
@@ -110,6 +120,9 @@ class Filme{
         cardBody.appendChild(cardText3);
         cardBody.appendChild(cardText4);
         cardBody.appendChild(cardText5);
+        cardBody.appendChild(cardText6);
+        cardBody.appendChild(cardText7);
+        cardBody.appendChild(cardText8);
         col2.appendChild(row);
         col.appendChild(img);
         row.appendChild(col);
