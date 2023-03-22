@@ -69,4 +69,32 @@ class Filme{
     getBtnDetalhes = () =>{
         return this.btnDetalhes
     }
+
+    getDetalhesFilme = () =>{
+        let cardDetalhes = document.createElement('div');
+        cardDetalhes.setAttribute('class', 'card mb-3');
+        cardDetalhes.style.maxWidth = '540px';
+        let row = document.createElement('div');
+        row.setAttribute('class','row g-0');
+        let col = document.createElement('div');
+        col.setAttribute('class','col-md-4');
+        let img = document.createElement('img');
+        img.setAttribute('class','img-fluid rounded-start');
+        img.setAttribute('src',this.cartaz);
+        col.appendChild(img);
+        row.appendChild(col);
+        let col2 = document.createElement('div');
+        col2.setAttribute('class','col-md-8');
+        let cardBody = document.createElement('div');
+        cardBody.setAttribute('class', 'card-body');
+        let cardText = document.createElement('h5');
+        cardText.setAttribute('class', 'card-title');
+        let cardText2 = document.createElement('p');
+        cardText2.setAttribute('class', 'card-text');
+        
+
+
+
+    }
 }
+

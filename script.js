@@ -49,12 +49,17 @@ let detalhesFilme = async (id)=>{
             resp.Awards,
             resp.imdbRating
         )
-        console.log(filme);
+        document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
+        document.querySelector("#lista-filmes").style.display = "none";
+        document.querySelector("#mostrar-filme").style.display = "flex";
     });
 }
 let listarFilmes = async (filmes)=>{
     let listaFilmes = await document.querySelector("#lista-filmes");
+    listaFilmes.style.display = "flex";
     listaFilmes.innerHTML = "";
+    document.querySelector("#mostrar-filme").innerhtml = "";
+    document.querySelector("#mostrar-filme").style.display = "none";
     console.log(listaFilmes);
     if (filmes.length > 0){
         filmes.forEach(async(filme)=>{
@@ -62,13 +67,10 @@ let listarFilmes = async (filmes)=>{
             filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
                 mostrarFilme.style.display = "block";
-                document.getElementById('info').innerHTML = detalhesFilme.sinopse;
             }
         });
     }
 }
-
 function fecharBotao(){
-    tela = document.getElementById('mostrar-filme');
     mostrarFilme.style.display = "none";
-}
+}   
