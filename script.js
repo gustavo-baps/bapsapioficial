@@ -49,7 +49,8 @@ let detalhesFilme = async (id)=>{
             resp.Awards,
             resp.imdbRating
         )
-        document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
+        document.querySelector("#card-filme").innerHTML = "";
+        document.querySelector("#card-filme").appendChild(filme.getDetalhesFilme());
         document.querySelector("#mostrar-filme").style.display = "flex";
     });
 }
@@ -70,4 +71,4 @@ let listarFilmes = async (filmes)=>{
 }
 function fecharBotao(){
     mostrarFilme.style.display = "none";
-}   
+} 

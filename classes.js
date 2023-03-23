@@ -64,7 +64,7 @@ class Filme{
     this.btnDetalhes = document.createElement('button');
     this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
     this.btnDetalhes.setAttribute("id", this.id);
-    this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
+    this.btnDetalhes.setAttribute("class", "btnDetalhesFilme btn btn-info");
     }
     getBtnDetalhes = () =>{
         return this.btnDetalhes
@@ -74,7 +74,7 @@ class Filme{
         let cardDetalhes = document.createElement('div');
         cardDetalhes.setAttribute('class', 'card mb-3');
         cardDetalhes.style.maxWidth = '540px';
-        cardDetalhes.style.margin = '10px'
+        cardDetalhes.style.margin = '10px';
         let row = document.createElement('div');
         row.setAttribute('class','row g-0');
         let col = document.createElement('div');
@@ -111,9 +111,6 @@ class Filme{
         let cardText8 = document.createElement('p');
         cardText8.setAttribute('class', 'card-text');
         cardText8.appendChild(document.createTextNode(this.elenco));
-        let small = document.createElement('small');
-        small.textContent = 'Last updated 3 mins ago';
-        cardText2.appendChild(small);
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         cardBody.appendChild(cardText2);
