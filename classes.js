@@ -119,13 +119,12 @@ class Filme{
         cardBody.appendChild(cardText6);
         cardBody.appendChild(cardText7);
         cardBody.appendChild(cardText8);
-        col2.appendChild(row);
         col.appendChild(img);
+        col2.appendChild(cardBody);
         row.appendChild(col);
+        row.appendChild(col2);
+        
         cardDetalhes.appendChild(row);
-        cardDetalhes.appendChild(col);
-        cardDetalhes.appendChild(col2);
-        cardDetalhes.appendChild(cardBody);
 
         let btnSalvar = document.createElement('button');
         btnSalvar.appendChild(document.createTextNode('Salvar'));
