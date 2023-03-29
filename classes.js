@@ -89,10 +89,9 @@ class Filme{
         let cardTitle = document.createElement('h5');
         cardTitle.setAttribute('class', 'card-title');
         cardTitle.appendChild(document.createTextNode(this.titulo));
-        let cardText = document.createElement('p');
-        cardText.setAttribute('class', 'card-text');
         let cardText2 = document.createElement('p');
         cardText2.setAttribute('class', 'card-text');
+        cardText2.appendChild(document.createTextNode(this.sinopse));
         let cardText3 = document.createElement('p');
         cardText3.setAttribute('class', 'card-text');
         cardText3.appendChild(document.createTextNode(this.avaliacao));
@@ -112,7 +111,6 @@ class Filme{
         cardText8.setAttribute('class', 'card-text');
         cardText8.appendChild(document.createTextNode(this.elenco));
         cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
         cardBody.appendChild(cardText2);
         cardBody.appendChild(cardText3);
         cardBody.appendChild(cardText4);
@@ -123,14 +121,10 @@ class Filme{
         col2.appendChild(row);
         col.appendChild(img);
         row.appendChild(col);
-        cardText.appendChild(document.createTextNode(this.sinopse));
-        cardDetalhes.appendChild(cardText);
-        cardDetalhes.appendChild(cardTitle);
         cardDetalhes.appendChild(row);
         cardDetalhes.appendChild(col);
         cardDetalhes.appendChild(col2);
         cardDetalhes.appendChild(cardBody);
-        cardDetalhes.appendChild(cardText2);
 
         return cardDetalhes;
     }
