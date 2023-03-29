@@ -127,6 +127,13 @@ class Filme{
         cardDetalhes.appendChild(col2);
         cardDetalhes.appendChild(cardBody);
 
+        let btnSalvar = document.createElement('button');
+        btnSalvar.appendChild(document.createTextNode('Salvar'));
+        btnSalvar.setAttribute('id', 'btnSalvar');
+        cardDetalhes.appendChild(btnSalvar);
+
+        
+
         return cardDetalhes;
     }
 }

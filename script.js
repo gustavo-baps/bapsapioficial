@@ -52,6 +52,14 @@ let detalhesFilme = async (id)=>{
         document.querySelector("#card-filme").innerHTML = "";
         document.querySelector("#card-filme").appendChild(filme.getDetalhesFilme());
         document.querySelector("#mostrar-filme").style.display = "flex";
+        document.querySelector('#btnFechar').onclick = () =>{
+            document.querySelector('#lista-filmes').style.display = 'flex';
+            document.querySelector('#mostrar-filme').innerHTML = "";
+            document.querySelector('#mostrar-filme').style.display = 'none';
+        }
+        document.querySelector('#btnSalvar').onclick = () =>{
+            salvarFilme(filme);
+        }
     });
 }
 let listarFilmes = async (filmes)=>{
