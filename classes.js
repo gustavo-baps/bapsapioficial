@@ -109,6 +109,7 @@ class Filme{
         cardText7.appendChild(document.createTextNode(this.classificacao));
         let cardText8 = document.createElement('p');
         cardText8.setAttribute('class', 'card-text');
+        //comentario
         cardText8.appendChild(document.createTextNode(this.elenco));
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText2);
