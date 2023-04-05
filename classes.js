@@ -109,7 +109,6 @@ class Filme{
         cardText7.appendChild(document.createTextNode(this.classificacao));
         let cardText8 = document.createElement('p');
         cardText8.setAttribute('class', 'card-text');
-        //comentario
         cardText8.appendChild(document.createTextNode(this.elenco));
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText2);
@@ -129,8 +128,15 @@ class Filme{
         let btnSalvar = document.createElement('button');
         btnSalvar.appendChild(document.createTextNode('Salvar'));
         btnSalvar.setAttribute('id', 'btnSalvar');
+        btnSalvar.setAttribute('class','btn btn-info');
+
         cardDetalhes.appendChild(btnSalvar);
 
+        let btnExcluir = document.createElement('button');
+        btnExcluir.appendChild(document.createTextNode('Excluir'));
+        btnExcluir.setAttribute('id', 'btnExcluir');
+
+        cardDetalhes.appendChild(btnExcluir);
         
 
         return cardDetalhes;
