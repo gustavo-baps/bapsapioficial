@@ -50,16 +50,11 @@ let detalhesFilme = async (id)=>{
             resp.imdbRating
         )
         document.querySelector("#card-filme").appendChild(filme.getDetalhesFilme());
-        document.querySelector("#btnFechar").onclick = () =>{
-            document.querySelector("#lista-filmes").style.display = "grid";
-            document.querySelector("#mostrar-filme").innerHTML = "";
-            document.querySelector("#mostrar-filme").style.display = "none";
-        }
         document.querySelector('#btnSalvar').onclick = () =>{
             salvarFilme(filme);
         }
         document.querySelector("#mostrar-filme").style.display = "block";
-        let filmesString = localStorage.getItem('filmesFavoritos');
+        let filmesString = sessionStorage.getItem('filmesFavoritos');
         var filmes = JSON.parse(filmesString);
         filmes=JSON.stringify(filmes);
     });
@@ -81,7 +76,7 @@ let listarFilmes = async (filmes)=>{
 }
 
 function listarFavoritos(){
-    let filmesFavoritos = localStorage.getItem('filmesFavoritos');
+    let filmesFavoritos = sessionStorage.getItem('filmesFavoritos');
     filmesFavoritos=JSON.parse(filmesFavoritos);
     let filmes = new Array();
     filmesFavoritos.forEach((item) =>{
@@ -102,7 +97,7 @@ function listarFavoritos(){
     listarFilmes(filmes);
 }
 let salvarFilme = (filme) => {
-    let filmesString = localStorage.getItem('filmesFavoritos');
+    let filmesString = sessionStorage.getItem('filmesFavoritos');
     let filmes = null;
     if(filmesString<0){
         filmes=JSON.parse(filmesString);
@@ -112,10 +107,14 @@ let salvarFilme = (filme) => {
         filmes=[filme];
     }
     filmes = JSON.stringify(filmes);
-    localStorage.setItem('filmesFavoritos',filmes);
+    sessionStorage.setItem('filmesFavoritos',filmes);
 
 }
   
 navFavoritos.onclick = () =>{
     listarFavoritos();
+}
+function fecharBotao(){
+    mostrarFilme.style.display = "none";
+    document.querySelector("#card-filme").innerHTML = "";
 }

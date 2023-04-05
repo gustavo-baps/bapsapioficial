@@ -25,6 +25,7 @@
 #mostrar-filme a{
     float: right;
     margin: 5px;
+    text-decoration: none;
 }
 .card{
     border: none;

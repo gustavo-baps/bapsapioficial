@@ -131,10 +131,7 @@ class Filme{
         btnSalvar.setAttribute('id', 'btnSalvar');
         cardDetalhes.appendChild(btnSalvar);
 
-        let btnFechar = document.createElement('button');
-        btnFechar.appendChild(document.createTextNode('Fechar'));
-        btnFechar.setAttribute('id', 'btnFechar');
-        cardDetalhes.appendChild(btnFechar);
+        
 
         return cardDetalhes;
     }
