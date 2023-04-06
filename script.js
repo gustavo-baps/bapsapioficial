@@ -108,18 +108,16 @@ let salvarFilme = (filme) => {
     let filmes=null;
     if(filmesString){
         filmes=JSON.parse(filmesString);
-        filmes.push(filme);
-        console.log('b');
+        if(!filmes.find(item => item.id===filme.id)){
+            filmes.push(filme);
+        }
     }else{
         filmes=[filme];
-        console.log('a');
     }
     
     filmes = JSON.stringify(filmes);
     localStorage.setItem('filmesFavoritos',filmes);
-    console.log(filmes);
 }
-  
 navFavoritos.onclick = () =>{
     listarFavoritos();
 }
@@ -127,3 +125,18 @@ function fecharBotao(){
     mostrarFilme.style.display = "none";
     document.querySelector("#card-filme").innerHTML = "";
 }
+let excluirFilme = (filme) => {
+    let filmesString = localStorage.getItem('filmesFavoritos');
+    let filmes=JSON.parse(filmesString);
+    let position = filmes.findIndex(function(item) {
+        return item.id === filme.id;
+      });
+    
+    if(position!==-1){
+        filmes.splice(position, 1);
+    }
+    
+    filmes = JSON.stringify(filmes);
+    localStorage.setItem('filmesFavoritos',filmes);
+}
+  
